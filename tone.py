@@ -2,14 +2,14 @@ import numpy as np
 import wavio, os, shutil
 import utilFunctions as utf
 
-num = 1 #number of files to generate
+num = 10 #number of files to generate
 
 rate = 44100 #sample rate
 T = 0.1 #length of each file in seconds
 f1 = 50.0 #starting frequency
 f2 = 100.0 #ending frequency
 
-
+# def sineBlip(freq, ):
 #compute waveform samples
 
 
