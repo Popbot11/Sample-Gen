@@ -31,7 +31,7 @@ for i in range(len(paramNames)):
     paramEnd.append(float(input(paramNames[i]+" end value: ")))
 
 print(paramNames, paramStart, paramEnd, params)
-
+#comment 
 if (str(input("generate files? y/n ")).upper()=="y".upper()):
 
     newDir = "toneGen/render"+str(int(os.listdir("toneGen")[-1][-1])+1)
