@@ -20,3 +20,10 @@ def clampList(v_min, v_max, input):
     for i in input:
         output.append(clamp(v_min, v_max, i))
     return output
+
+def dictToStr(dict):
+    output = ""
+    for i in dict:
+        output +=( str(i) + ", ")
+
+    return output
