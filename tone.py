@@ -39,9 +39,9 @@ def noiseBlip(decayLen, fileLen):
     audio = audio * envelope #functionally a vca
     return audio 
 
-def impulseTrain(count, period, fileLen):
+def impulseTrainPeriod(count, period, fileLen):
     
-    audio = [1 if (x % period == 0) and (x < period * count) else (-1) for x in range(int(rate * fileLen))] #generate silence of length (fileLen * rate)
+    audio = [1.0 if (int(x % period) == 0) and (x < period * count) else 0.0 for x in range(int(rate * fileLen))] #generate silence of length (fileLen * rate)
 
     return audio
 
@@ -53,7 +53,7 @@ generate = {
     "sineBlip": sineBlip,
     "noise": noise,
     "noiseBlip": noiseBlip,
-    "impulseTrain": impulseTrain
+    "impulseTrainPeriod": impulseTrainPeriod
 }
 
 
@@ -85,8 +85,9 @@ if (str(input("generate files? y/n ")).upper()=="y".upper()):
         params = []
         for j in range(len(paramNames)):
             params.append(utf.interp(paramStart[j], paramEnd[j], interpVal))
-        print(i, params)
+        
         audio = generate[choice](*params)
+        print(i, params)
         # audio = [sineBlip()]
         wavio.write(newDir+"/"+fileName+str(i)+".wav", audio, rate, sampwidth=3)
 
