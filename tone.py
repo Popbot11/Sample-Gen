@@ -57,8 +57,8 @@ generate = {
 }
 
 
-print(utf.dictToStr(generate))
-choice = str(input("choose a generator from the list:"))
+print("\n"+utf.dictToStr(generate))
+choice = str(input("choose a generator from the list above: "))
 num = int(input("number of files to create: ")) #number of files to generate
 fileName = str(input("name for each file: "))
 
